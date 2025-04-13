@@ -51,8 +51,6 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5000/seller/all-stores
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
-
 ###
 POST http://localhost:5000/admin/create-U-S-A
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0

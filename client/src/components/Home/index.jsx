@@ -8,25 +8,34 @@ const Home = () => {
   const [stores, setStores] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [userRatings, setUserRatings] = useState({});
+  const [reviews, setReviews] = useState([]);
   const [isRatingModalOpen, setIsRatingModalOpen] = useState(false);
   const [selectedStore, setSelectedStore] = useState(null);
   const [newRating, setNewRating] = useState(0);
   const jwt = cookie.get("jwtToken");
+  console.log(reviews);
   const decoded = jwtDecode(jwt);
-  useEffect(() => {
+  const fetchData = async () => {
     const payload = {
       headers: {
         authorization: `Bearer ${jwt}`,
       },
     };
-    const response = fetch("http://localhost:5000/seller/all-stores", )
-    axios
-      .get("http://localhost:5000/seller/all-stores", payload)
-      .then((response) => {
-        console.log(response)
-        setStores(response.data.result);
-      })
-      .catch((error) => console.error(error));
+
+    const response1 = await axios.get(
+      "http://localhost:5000/seller/all-stores",
+      payload
+    );
+    setStores(response1.data.result);
+    const response2 = await axios.get(
+      "http://localhost:5000/seller/allReviews",
+      payload
+    );
+    setReviews(response2.data.result);
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
   const filteredStores = stores.filter(
     (store) =>
@@ -39,7 +48,7 @@ const Home = () => {
       .post(`http://localhost:5000/user/review/${userId}/${storeId}`, {
         rating,
       })
-      .then((response) => {
+      .then(() => {
         setUserRatings((prevRatings) => ({
           ...prevRatings,
           [storeId]: rating,
@@ -52,7 +61,6 @@ const Home = () => {
     <div className="bg-gradient-to-r from-blue-100 to-purple-100 h-screen">
       <Navbar />
       <div className="min-h-screen bg-gray-50 py-10 px-4">
-        
         <div className="max-w-lg mx-auto mb-6">
           <input
             type="text"
@@ -99,7 +107,6 @@ const Home = () => {
           ))}
         </div>
 
-       
         {isRatingModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
