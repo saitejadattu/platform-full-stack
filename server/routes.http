@@ -1,0 +1,85 @@
+###
+GET http://localhost:5000/admin/all-users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
+
+
+###
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "name":"user2",
+    "email":"user2@gmail.com",
+    "address":"user",
+    "password": "user123",
+    "role":"user"
+}
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"teja@gmail.com",
+    "password":"teja123"
+}
+###
+PUT http://localhost:5000/update/b5e3500a-d873-4b40-99c5-57f4270ea112
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
+Content-Type: application/json
+
+{
+    "name":"sellers",
+    "email":"sellers@gmail.com"
+}
+###
+DELETE http://localhost:5000/delete/81ab7783-08a0-413e-b5ce-f9ea4953f0d9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
+
+###
+GET http://localhost:5000/seller/create-store/7fa2acad-717c-4345-b693-c714738f3f17
+
+###
+POST http://localhost:5000/seller/create-store/7fa2acad-717c-4345-b693-c714738f3f17
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
+Content-Type: application/json
+
+{
+    "name":"ratan stores",
+    "email":"ratan@gmail.com",
+    "address":"lb nagar, hyderabad"
+}
+
+###
+GET http://localhost:5000/seller/all-stores
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
+
+###
+POST http://localhost:5000/admin/create-U-S-A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
+Content-Type: application/json
+
+{
+    "name":"user1",
+    "email":"user1@gmail.com",
+    "address":"user1",
+    "password": "user123",
+    "role":"user"
+}
+###
+GET http://localhost:5000/admin/all-stores
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
+###
+GET http://localhost:5000/admin/all-users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
+
+###
+POST http://localhost:5000/user/review/2996bbd5-8d80-474a-89db-537bc854ed7c/17f0f062-99d0-4a2a-ae70-c3424d822180
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
+Content-Type: application/json
+
+{
+    "rating": 4
+}
+####
+GET http://localhost:5000/seller/allReviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGxlckBnbWFpbC5jb20iLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzQ0NTI0Nzg0fQ.9HYFqrEIV9K4FtGoJHGj5saodzH9MuiR0G7eQzxY4s0
